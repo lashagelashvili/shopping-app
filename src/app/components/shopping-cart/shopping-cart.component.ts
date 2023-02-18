@@ -4,6 +4,7 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
+import { tap } from 'rxjs';
 import { ShoppingService } from 'src/app/services/shopping.service';
 
 @Component({
@@ -13,13 +14,19 @@ import { ShoppingService } from 'src/app/services/shopping.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShoppingCartComponent implements OnInit {
-  private _shoppingService = inject(ShoppingService);
+  private readonly _shoppingService = inject(ShoppingService);
 
-  selectedProducts$ = this._shoppingService.selectedProducts$;
+  selectedProducts$ = this._shoppingService.selectedProducts$.pipe(
+    tap(console.log)
+  );
+
+  total = 0;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.total = this._shoppingService.calculateTotal();
+  }
 
   clearCart() {
     this._shoppingService.clearSelectedProducts();
