@@ -1,0 +1,33 @@
+<div class="header">
+  <app-back-arrow></app-back-arrow>
+</div>
+
+<ng-container *ngIf="selectedProducts$ | async as products; else empty">
+  <div class="container">
+    <div class="container__item" *ngFor="let product of products">
+      <div class="container__item-name">
+        {{ product.title }}
+      </div>
+      <img [src]="product.image" alt="" class="container__item-image" />
+      <div class="container__item-price">
+        {{ product.price }}
+      </div>
+      <div class="container__item-amount">{{ product.amount }}</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-total">Total = 1000</div>
+
+    <div class="footer__buttons">
+      <button class="footer__btn footer__btn-clear" (click)="clearCart()">
+        Clear Cart
+      </button>
+      <button class="footer__btn footer__btn-checkout">Checkout</button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #empty>
+  <div class="empty">Your Cart is Empty</div>
+</ng-template>
