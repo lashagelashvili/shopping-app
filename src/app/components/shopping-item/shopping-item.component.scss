@@ -1,0 +1,28 @@
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 1em;
+
+  &-name {
+    padding: 1em;
+  }
+
+  &-image {
+    max-width: 100px;
+  }
+
+  &-add {
+    border: none;
+    border-radius: 2em;
+    background-color: #5ac141;
+    color: #fff;
+    padding: 1em 2em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #52b43b;
+    }
+  }
+}
