@@ -1,0 +1,31 @@
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  margin-inline: auto;
+  padding-top: 1em;
+
+  &-image {
+    max-width: 40px;
+  }
+
+  &-button {
+    border: none;
+    background-color: #ffd814;
+    padding: 1em 2em;
+    border-radius: 2em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ecc500;
+    }
+  }
+}
+
+.container {
+  margin: 5em;
+  padding: 1em;
+  border: 0.3em solid aquamarine;
+  border-radius: 1em;
+}

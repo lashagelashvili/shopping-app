@@ -1,0 +1,16 @@
+<div class="cart">
+  <img
+    src="https://static.vecteezy.com/system/resources/previews/004/999/463/original/shopping-cart-icon-illustration-free-vector.jpg"
+    alt="shopping cart"
+    class="cart-image"
+  />
+  <button class="cart-button" (click)="goToCart()">Go to Cart</button>
+</div>
+
+<div class="container">
+  <app-shopping-item
+    *ngFor="let product of products$ | async"
+    [product]="product"
+    (addItemEvent)="addItem($event)"
+  ></app-shopping-item>
+</div>
