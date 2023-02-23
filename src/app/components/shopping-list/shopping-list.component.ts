@@ -17,7 +17,9 @@ export class ShoppingListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('init');
+  }
 
   addItem(product: Product) {
     this._shoppingService.addProduct(product);
