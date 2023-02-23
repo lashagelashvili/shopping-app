@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { shareReplay, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { ShoppingService } from 'src/app/services/shopping.service';
 
@@ -14,6 +14,7 @@ export class ShoppingListComponent implements OnInit {
   private readonly _router = inject(Router);
 
   products$ = this._shoppingService.getItems().pipe(tap(console.log));
+  // products$ = this._shoppingService.$products.pipe(tap(console.log));
 
   constructor() {}
 
