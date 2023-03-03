@@ -47,10 +47,8 @@ export class ShoppingService {
   calculateTotal() {
     return this.selectedProducts.reduce((acc, current) => {
       let total = current.price * current.amount;
-      return acc + total;
+      return Math.floor((acc + total) * 1000) / 1000;
     }, 0);
-
-    console.log(this.selectedProducts);
   }
 
   removeDuplicates() {
