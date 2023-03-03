@@ -12,7 +12,16 @@
       <div class="container__item-price">
         {{ product.price }}
       </div>
-      <div class="container__item-amount">{{ product.amount }}</div>
+
+      <div class="container__item-amount">
+        <input
+          type="number"
+          min="1"
+          max="10"
+          [(ngModel)]="product.amount"
+          (change)="updateAmount()"
+        />
+      </div>
     </div>
   </div>
 

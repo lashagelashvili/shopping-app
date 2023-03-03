@@ -25,6 +25,10 @@ export class ShoppingCartComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.total = this._shoppingService.calculateTotal(); // fix later
+  }
+
+  updateAmount() {
     this.total = this._shoppingService.calculateTotal();
   }
 
