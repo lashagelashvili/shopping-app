@@ -9,9 +9,7 @@
         {{ product.title }}
       </div>
       <img [src]="product.image" alt="" class="container__item-image" />
-      <div class="container__item-price">
-        {{ product.price }}
-      </div>
+      <div class="container__item-price">{{ product.price | currency }}</div>
 
       <div class="container__item-amount">
         <input
@@ -26,7 +24,7 @@
   </div>
 
   <div class="footer">
-    <div class="footer-total">Total = {{ total }}</div>
+    <div class="footer-total">Total = {{ total | currency }}</div>
 
     <div class="footer__buttons">
       <button class="footer__btn footer__btn-clear" (click)="clearCart()">
