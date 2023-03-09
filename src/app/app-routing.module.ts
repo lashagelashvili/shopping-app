@@ -8,8 +8,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'shopping-list', pathMatch: 'full' },
   { path: 'shopping-list', component: HomepageComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
-  { path: '**', redirectTo: 'shopping-list' },
   { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'shopping-list' },
 ];
 
 @NgModule({

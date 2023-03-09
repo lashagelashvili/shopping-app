@@ -14,7 +14,6 @@ export class ShoppingListComponent implements OnInit {
   private readonly _router = inject(Router);
 
   products$ = this._shoppingService.getItems().pipe(tap(console.log));
-  // products$ = this._shoppingService.$products.pipe(tap(console.log));
 
   constructor() {}
 
