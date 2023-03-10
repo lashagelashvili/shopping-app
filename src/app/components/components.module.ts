@@ -6,6 +6,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,8 +15,9 @@ import { LoginComponent } from './login/login.component';
     ShoppingItemComponent,
     ShoppingCartComponent,
     LoginComponent,
+    SignupComponent,
   ],
-  imports: [CommonModule, SharedModule, FormsModule],
+  imports: [CommonModule, SharedModule, FormsModule, RouterModule],
   exports: [ShoppingListComponent, ShoppingItemComponent],
 })
 export class ComponentsModule {}
